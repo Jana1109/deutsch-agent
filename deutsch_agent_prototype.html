@@ -144,10 +144,10 @@ body { font-family: -apple-system, 'Helvetica Neue', 'PingFang SC', sans-serif; 
       <span>📅 14天德语恢复计划</span>
       <button class="btn-overview" onclick="openOverview()">📊 学习总览</button>
     </div>
-    <div class="cal-hint">✅ 已完成 &nbsp; 🔵 今天可点 &nbsp; ⬜ 未解锁</div>
+    <div class="cal-hint">✅ 已完成 &nbsp; 🔵 可点击学习</div>
     <div class="cal-grid" id="calGrid"></div>
     <div style="text-align:center;padding:0 16px 18px;font-size:11px;color:#5F5E5A;">
-      完成当天测试 ≥80% 正确率即可解锁下一天
+      所有天数已解锁，点击即可学习
     </div>
   </div>
 
@@ -2749,8 +2749,7 @@ function renderCal() {
     c.className = 'cal-cell';
     c.textContent = i;
     if (APP.completed.includes(i)) { c.classList.add('done'); c.onclick=()=>openDay(i); }
-    else if (i===APP.currentDay) { c.classList.add('today'); c.onclick=()=>openDay(i); }
-    else { c.classList.add('locked'); }
+    else { c.classList.add('today'); c.onclick=()=>openDay(i); }
     g.appendChild(c);
   }
 }
